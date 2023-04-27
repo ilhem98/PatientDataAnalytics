@@ -30,7 +30,7 @@ with header_mid:
 
 @st.cache_resource
 def get_data():
-    df = pd.read_csv('C:\\Users\\Ilham\\Desktop\\100DaysofCode\\data\\PatientDataAnalytics\\30-Days-DExcomClarity_CGM.csv', sep =';')
+    df = pd.read_csv('https://github.com/ilhem98/PatientDataAnalytics/blob/main/30-Days-DExcomClarity_CGM.csv', sep =';')
     glucose = df[['DataDtTm', 'CGM']]
     return glucose
    
