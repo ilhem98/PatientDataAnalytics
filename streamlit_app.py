@@ -15,9 +15,8 @@ st.set_page_config(page_title='Patient Data Analytics Dashboard', layout='wide',
 
 
 header_left, header_mid, header_right = st.columns([1, 2, 1], gap='large')
-
 with header_mid:
-    st.title('Patient Data Analytics Dashboard', text_centered=True)
+    st.title('Patient Data Analytics Dashboard')
 
     st.write("""
     **Credit:** Meryem Kacimi & Ilhem Kacimi
