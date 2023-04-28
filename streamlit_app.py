@@ -31,7 +31,7 @@ with header_mid:
 
 @st.cache
 def get_data():
-    df = pd.read_csv('https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv?token=GHSAT0AAAAAACBYP2CYRLKRNFVN3X6LEG4KZCMHX7Q', sep =';')
+    df = pd.read_csv('https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv', sep =';')
     glucose = df[['DataDtTm', 'CGM']]
     return glucose
    
