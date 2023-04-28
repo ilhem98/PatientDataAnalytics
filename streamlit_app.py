@@ -41,7 +41,9 @@ def get_data():
     
     # Read the file from disk using pandas
     df = pd.read_csv('30-Days-DExcomClarity_CGM', sep=';')
-    return df
+    glucose = df[['DataDtTm', 'CGM']]
+    return glucose
+
 
 # Call the function to get the data
 df = get_data()
