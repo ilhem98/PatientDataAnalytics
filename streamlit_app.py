@@ -31,12 +31,18 @@ with header_mid:
 
 @st.cache
 def get_data():
-    df = pd.read_csv('https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv', sep =';')
-    glucose = df[['DataDtTm', 'CGM']]
-    return glucose
-   
-  
-# Get the DataFrame
+    # Download the file from GitHub and save it locally
+    url = 'https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv'
+    response = requests.get(url)
+    content = response.content
+    with open('30-Days-DExcomClarity_CGM', 'wb') as f:
+        f.write(content)
+    
+    # Read the file from disk using pandas
+    df = pd.read_csv('30-Days-DExcomClarity_CGM', sep=';')
+    return df
+
+# Call the function to get the data
 df = get_data()
 
 # Print the first 5 rows of the DataFrame
