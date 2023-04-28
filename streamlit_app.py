@@ -34,7 +34,7 @@ def get_data():
     repo = g.get_repo("ilhem98/PatientDataAnalytics")
     file = repo.get_contents("blob/main/30-Days-DExcomClarity_CGM.csv")
 
-    df = pd.read_csv('https://github.com/ilhem98/PatientDataAnalytics/blob/main/30-Days-DExcomClarity_CGM.csv', sep =';')
+    df = pd.read_csv(file.download_url, sep =';')
     glucose = df[['DataDtTm', 'CGM']]
     return glucose
    
