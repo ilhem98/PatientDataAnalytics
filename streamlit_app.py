@@ -29,7 +29,7 @@ with header_mid:
 
 
 
-@st.cache_resource
+@st.cache
 def get_data():
     # Download the file from GitHub and save it locally
     url = 'https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv?token=GHSAT0AAAAAACBYP2CYMP25NUYMBRNXETAOZCMILRQ'
