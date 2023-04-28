@@ -19,7 +19,7 @@ header_left, header_mid, header_right = st.columns([1, 2, 1], gap='large')
 with header_mid:
      st.write("""
     <h1 style='text-align: center; margin-bottom: 0;'>Patient Data Analytics Dashboard</h1>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
     st.write("""
     **Credit:** Meryem Kacimi & Ilhem Kacimi
