@@ -31,11 +31,7 @@ with header_mid:
 
 @st.cache_resource
 def get_data():
-    g = Github("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")
-    repo = g.get_repo("ilhem98/PatientDataAnalytics")
-    file = repo.get_contents("blob/main/30-Days-DExcomClarity_CGM.csv")
-
-    df = pd.read_csv(file.download_url, sep =';')
+    df = pd.read_csv('https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv?token=GHSAT0AAAAAACBYP2CYV7GQ45WF7GB27AEKZCMGO2A', sep =';')
     glucose = df[['DataDtTm', 'CGM']]
     return glucose
    
