@@ -34,7 +34,7 @@ def get_data():
     # Download the file from GitHub and save it locally
    
 
-    url = 'https://ilhem98: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@github.com/ilhem98/PatientDataAnalytics.git'
+    url = 'https://raw.githubusercontent.com/ilhem98/DataPatient/main/30-Days-DExcomClarity_CGM.csv'
 
 
 
