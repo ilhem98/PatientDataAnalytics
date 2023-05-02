@@ -32,9 +32,9 @@ with header_mid:
 @st.cache
 def get_data():
     # Download the file from GitHub and save it locally
-    token = 'abc123'
-    username = 'john'
-    repo_name = 'my-repo'
+    token = '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'
+    username = 'ilhem98'
+    repo_name = 'PatientDataAnalytics'
 
     url = 'https://' + username + ':' + token + '@github.com/' + username + '/' + repo_name + '.git'
 
