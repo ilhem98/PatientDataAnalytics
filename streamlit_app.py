@@ -32,7 +32,7 @@ with header_mid:
 @st.cache
 def get_data():
     # Download the file from GitHub and save it locally
-    url = 'https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv?token=GHSAT0AAAAAACBYP2CYMP25NUYMBRNXETAOZCMILRQ'
+    url = 'https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv?token=GHSAT0AAAAAACBYP2CY2Y2TLE4KYT3XRSUQZCRCWTQ'
     response = requests.get(url)
     content = response.content
     with open('30-Days-DExcomClarity_CGM', 'wb') as f:
