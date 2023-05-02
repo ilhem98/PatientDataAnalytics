@@ -32,7 +32,14 @@ with header_mid:
 @st.cache
 def get_data():
     # Download the file from GitHub and save it locally
-    url = 'https://raw.githubusercontent.com/ilhem98/PatientDataAnalytics/main/30-Days-DExcomClarity_CGM.csv?token=GHSAT0AAAAAACBYP2CYQMXUAFP5DA24FBYCZCRC4NA'
+    token = 'abc123'
+    username = 'john'
+    repo_name = 'my-repo'
+
+    url = 'https://' + username + ':' + token + '@github.com/' + username + '/' + repo_name + '.git'
+
+
+
     response = requests.get(url)
     content = response.content
     with open('30-Days-DExcomClarity_CGM', 'wb') as f:
