@@ -28,26 +28,32 @@ with header_mid:
 
 
 
-
 @st.cache
 def get_data():
     # Download the file from GitHub and save it locally
-   
-
     url = 'https://raw.githubusercontent.com/ilhem98/DataPatient/main/30-Days-DExcomClarity_CGM.csv'
-
-
-
     response = requests.get(url)
     content = response.content
-    with open('30-Days-DExcomClarity_CGM', 'wb') as f:
+    with open('30-Days-DExcomClarity_CGM.csv', 'wb') as f:
         f.write(content)
-    
-    # Read the file from disk using pandas
-    df = pd.read_csv('30-Days-DExcomClarity_CGM', sep=';')
-    glucose = df[['DataDtTm', 'CGM']]
-    return glucose
 
+    # Read the file from disk using pandas
+    df = pd.read_csv('30-Days-DExcomClarity_CGM.csv', sep=';')  # Adjust the separator if needed
+
+    # Strip whitespace from column names
+    df.columns = df.columns.str.strip()  
+
+    # Debug: Print out the columns and first few rows
+    st.write("DataFrame columns:", df.columns.tolist())  # Check the columns
+    st.write("First few rows of the DataFrame:", df.head())  # Print first few rows
+
+    # Check if required columns exist
+    if 'DataDtTm' in df.columns and 'CGM' in df.columns:
+        glucose = df[['DataDtTm', 'CGM']]  # Attempt to access these columns
+        return glucose
+    else:
+        st.error("Required columns 'DataDtTm' and 'CGM' not found in the DataFrame.")
+        return None
 
 # Call the function to get the data
 df = get_data()
