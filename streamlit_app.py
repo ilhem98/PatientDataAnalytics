@@ -32,19 +32,18 @@ with header_mid:
 @st.cache
 def get_data():
     # Download the file from GitHub and save it locally
-   
-
     url = 'https://raw.githubusercontent.com/ilhem98/DataPatient/main/30-Days-DExcomClarity_CGM.csv'
-
-
-
     response = requests.get(url)
     content = response.content
-    with open('30-Days-DExcomClarity_CGM', 'wb') as f:
+    with open('30-Days-DExcomClarity_CGM.csv', 'wb') as f:  # Make sure to use .csv extension
         f.write(content)
     
     # Read the file from disk using pandas
-    df = pd.read_csv('30-Days-DExcomClarity_CGM', sep=';')
+    df = pd.read_csv('30-Days-DExcomClarity_CGM.csv', sep=';')  # Adjust sep if necessary
+    
+    # Check the columns
+    print("Columns in DataFrame:", df.columns.tolist())  # Print columns to debug
+    
     glucose = df[['DataDtTm', 'CGM']]
     return glucose
 
